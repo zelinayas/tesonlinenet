@@ -40,6 +40,7 @@ namespace TesOnlineTes
             //SOAL expectedResult = soal.detail(id);   //nama model //bisa pakai .isNull
             //SOAL result = soal.detail(id);
             Assert.IsNull(result);
+            //ZAKI CEBOL
 
 
         }
