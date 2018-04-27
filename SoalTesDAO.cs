@@ -34,10 +34,11 @@ namespace TesOnlineTes
         public void TestMethod3()
         {
             SoalDAO soal = new SoalDAO();   //nama DAO
-            int id = 2;
-
+            
+            
+            SOAL result = soal.add();
             //SOAL expectedResult = soal.detail(id);   //nama model //bisa pakai .isNull
-            SOAL result = soal.detail(id);
+            //SOAL result = soal.detail(id);
             Assert.IsNull(result);
 
 
