@@ -52,7 +52,7 @@ namespace TesOnlineTes
             Assert.IsNotNull(cekDetail);
             //SUBTES sub = new SUBTES();
             //sub.ID_SUBTES = 1;
-            cekDetail.ID_SUBTES = 1;
+            //cekDetail.ID_SUBTES = 1;
             cekDetail.DURASI_SUB = DateTime.Now;
             int x = sub.edit(1, cekDetail);
             Assert.AreEqual(1,x);
