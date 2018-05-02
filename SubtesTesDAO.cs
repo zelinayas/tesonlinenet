@@ -56,6 +56,7 @@ namespace TesOnlineTes
             cekDetail.DURASI_SUB = DateTime.Now;
             int x = sub.edit(1, cekDetail);
             Assert.AreEqual(1,x);
+            //jancuk
 
         }
 
