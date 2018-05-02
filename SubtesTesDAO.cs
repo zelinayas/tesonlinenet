@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TesOnline;
 
@@ -9,11 +11,11 @@ namespace TesOnlineTes
     {
         SubtesDAO sub = new SubtesDAO(); //nama DAO
         
-
+        
         [TestMethod]
         public void TestMethodDetail()
         {
-
+            
             int id = 0;
             SOAL expectedResult = null; //nama model //bisa pakai .isNull
             SUBTES result = sub.detail(id);
@@ -32,16 +34,6 @@ namespace TesOnlineTes
 
         }
 
-        //[TestMethod]
-        //public void TestMethodDetail()
-        //{
-
-        //    int ID = 1;
-        //    SUBTES subt = sub.detail(ID);
-        //    Assert.AreEqual("ubah lagi", subt.DURASI_SUB);
-            
-        //}
-
         [TestMethod]
         public void TestMethodGetall()
         {
@@ -50,69 +42,101 @@ namespace TesOnlineTes
 
         }
 
-        [TestMethod]
+
+        [TestMethod] //passTambah
         public void TestMethodTambahSubtes()
         {
 
+            SUBTES ss = new SUBTES();
+            //ss.ID_SUBTES = 10;
+            ss.DURASI_SUB = DateTime.Now;
+            int x = sub.add(ss);
+            Trace.WriteLine(ss.ID_SUBTES); //kepake di transdetail
+            //Assert.AreEqual(1,x);
 
+
+        }
+
+        [Timeout(10000)]
+        [TestMethod] //passGagalTambah
+        public void TestMethodGagalTambahSubtes()
+        {
+
+            Thread.Sleep(2000);
             SUBTES s = new SUBTES();
-            s.ID_SUBTES = 3;
+            s.ID_SUBTES = 5;
             s.DURASI_SUB = DateTime.Now;
             int x = sub.add(s);
             Assert.AreEqual(1,x);
 
         }
 
-        //[TestMethod] //berhasil delete 3
-        //public void TestMethodDeleteSubtesBenar()
-        //{
+        [TestMethod] //passDelete 3
+        public void TestMethodDeleteSubtesBenar()
+        {
 
 
-        //    SUBTES ss = sub.detail(3);
-        //    Assert.IsNotNull(sub);
-        //    //ss.isPermanent = false;
-        //    int a = sub.delete(3);
-        //    Assert.AreEqual(1, a);
+            SUBTES ss = sub.detail(3);
+            Assert.IsNotNull(sub);
+            int a = sub.delete(3);
+            Assert.AreEqual(1, a);
 
-        //}
+        }
 
         [TestMethod]
         public void TestMethod6()
         {
-           
-
             SUBTES s = new SUBTES();
             s.ID_SUBTES = 1;
             int x = sub.add(s);
+            Assert.AreEqual(1, x);  //1 itu row affected
+
+        }
+
+        [TestMethod] //passCekDurasi
+        public void TestMethodDurasiG()
+        {
+            SUBTES ss = sub.detail(3);
+            Assert.AreNotEqual("2018-05-02 14:15:10.687", ss.DURASI_SUB);
+
+        }
+
+        [TestMethod] //passGagalCekDurasi
+        public void TestMethodDurasi()
+        {
+            SUBTES ss = sub.detail(3);
+            Assert.AreNotEqual("5/2/2018 2:15:10", ss.DURASI_SUB);
+
+        }
+
+        [TestMethod] //passEdit
+        public void TestMethodEdit()
+        {
+            int ID = 3;
+            SUBTES cekDetail =  sub.detail(ID);
+            //Assert.IsNotNull(cekDetail);
+            cekDetail.ID_SUBTES = ID;
+            cekDetail.DURASI_SUB = DateTime.Now;
+            int x = sub.edit(ID, cekDetail);
+            Assert.AreEqual(1,x);
+ 
+        }
+
+        [TestMethod] //passGagalEdit
+        public void TestMethodEditG()
+        {
+            int ID = 10;
+            SUBTES cekDetail = sub.detail(ID);
+            //Assert.IsNotNull(cekDetail);
+            cekDetail.ID_SUBTES = ID;
+            cekDetail.DURASI_SUB = DateTime.Now;
+            int x = sub.edit(ID, cekDetail);
             Assert.AreEqual(1, x);
 
         }
 
-        [TestMethod]
-        public void TestMethodEdit()
-        {
-
-            SUBTES cekDetail =  sub.detail(2);
-            Assert.IsNotNull(cekDetail);
-            //cekDetail.ID_SUBTES = 2;
-            cekDetail.DURASI_SUB = DateTime.Now;
-            int x = sub.edit(2, cekDetail);
-            Assert.AreEqual(1,x);
-            
-
-        }
-
-        //[TestMethod]
-        //public void TestMethodDelete()
-        //{
-
-        //    //SUBTES subt = sub.detail(2);
-        //   // subt.ID_SUBTES = 2;
-        //    int x = sub.delete(2);
-        //    Assert.(2);
 
 
-        //}
 
 
 
