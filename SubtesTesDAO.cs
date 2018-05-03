@@ -33,13 +33,13 @@ namespace TesOnlineTes
             Assert.IsNotNull(result); //jika sudah diisi akan ceklist
 
         }
-
+        [Timeout(1000)]
         [TestMethod]
         public void TestMethodGetall()
         {
-
+            
             Assert.IsNotNull(sub.getAll());
-
+            Thread.Sleep(2000);
         }
 
 
@@ -57,12 +57,12 @@ namespace TesOnlineTes
 
         }
 
-        [Timeout(10000)]
+       
         [TestMethod] //passGagalTambah
         public void TestMethodGagalTambahSubtes()
         {
 
-            Thread.Sleep(2000);
+           
             SUBTES s = new SUBTES();
             s.ID_SUBTES = 5;
             s.DURASI_SUB = DateTime.Now;
