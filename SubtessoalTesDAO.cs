@@ -11,7 +11,7 @@ namespace TesOnlineTes
         SubtessoalDAO subtessoal = new SubtessoalDAO();
 
         [TestMethod]
-        public void TestMethodDetail()
+        public void TestMethodDetailSubt()
         {
 
             int id = 0;
@@ -23,7 +23,7 @@ namespace TesOnlineTes
         }
 
         [TestMethod]
-        public void TestMethodTampilDataBenar()
+        public void TestMethodTampilDataBenarSubt()
         {
 
             int id = 1;
@@ -33,7 +33,7 @@ namespace TesOnlineTes
         }
 
         [TestMethod]
-        public void TestMethodGetall()
+        public void TestMethodGetallSubt()
         {
 
             Assert.IsNotNull(subtessoal.getAll());
@@ -42,7 +42,7 @@ namespace TesOnlineTes
 
 
         [TestMethod] //passTambah
-        public void TestMethodTambahSub()
+        public void TestMethodTambahSubt()
         {
 
             SUBTESSOAL ss = new SUBTESSOAL();
@@ -56,7 +56,7 @@ namespace TesOnlineTes
         }
 
         [TestMethod] //passGagalTambah
-        public void TestMethodGagalTambahSubtes()
+        public void TestMethodGagalTambahSubt()
         {
 
 
@@ -68,20 +68,20 @@ namespace TesOnlineTes
 
         }
 
-        //[TestMethod] //passDelete 3
-        //public void TestMethodDeleteSubtesBenar()
-        //{
+        [TestMethod] //passDelete 3
+        public void TestMethodDeleteSubtBenar()
+        {
 
 
-        //    SUBTESSOAL ss = subtessoal.detail(3);
-        //    Assert.IsNotNull(subtessoal);
-        //    int a = subtessoal.delete(3);
-        //    Assert.AreEqual(1, a);
+            SUBTESSOAL ss = subtessoal.detail(3);
+            Assert.IsNotNull(subtessoal);
+            int a = subtessoal.delete(3);
+            Assert.AreEqual(1, a);
 
-        //}
+        }
 
         [TestMethod]
-        public void TestMethod6()
+        public void TestMethodSubt()
         {
             SUBTESSOAL s = new SUBTESSOAL();
             //s.ID_SUBTES = 1;
@@ -91,7 +91,7 @@ namespace TesOnlineTes
         }
 
         //[TestMethod] //passCekDurasi
-        //public void TestMethodDurasiG()
+        //public void TestMethodDurasiSubt()
         //{
         //    SUBTESSOAL ss = subtessoal.detail(3);
         //    Assert.AreNotEqual("2018-05-02 14:15:10.687", ss.DURASI_SUB);
@@ -106,35 +106,35 @@ namespace TesOnlineTes
 
         //}
 
-        //[TestMethod] //passEdit
-        //public void TestMethodEdit()
-        //{
-        //    int ID = 3;
-        //    SUBTESSOAL cekDetail = subtessoal.detail(ID);
-        //    //Assert.IsNotNull(cekDetail);
-        //    cekDetail.ID_SUBTES = ID;
-        //    cekDetail.DURASI_SUB = DateTime.Now;
-        //    int x = sub.edit(ID, cekDetail);
-        //    Assert.AreEqual(1, x);
+        [TestMethod] //passEdit
+        public void TestMethodEdit()
+        {
+            int ID = 3;
+            SUBTESSOAL cekDetail = subtessoal.detail(ID);
+            //Assert.IsNotNull(cekDetail);
+            cekDetail.ID_SUBTES = ID;
+            //cekDetail.DURASI_SUB = DateTime.Now;
+            int x = subtessoal.edit(ID, cekDetail);
+            Assert.AreEqual(1, x);
 
-        //}
+        }
 
-        //[TestMethod] //passGagalEdit
-        //public void TestMethodEditG()
-        //{
-        //    int ID = 10;
-        //    SUBTES cekDetail = sub.detail(ID);
-        //    //Assert.IsNotNull(cekDetail);
-        //    cekDetail.ID_SUBTES = ID;
-        //    cekDetail.DURASI_SUB = DateTime.Now;
-        //    int x = sub.edit(ID, cekDetail);
-        //    Assert.AreEqual(1, x);
+        [TestMethod] //passGagalEdit
+        public void TestMethodEditG()
+        {
+            int ID = 10;
+            SUBTESSOAL cekDetail = subtessoal.detail(ID);
+            //Assert.IsNotNull(cekDetail);
+            cekDetail.ID_SUBTES = ID;
+            //cekDetail.DURASI_SUB = DateTime.Now;
+            int x = subtessoal.edit(ID, cekDetail);
+            Assert.AreEqual(1, x);
 
-        //}
+        }
 
 
         [TestMethod]
-        public void TestMethod7()
+        public void TestMethodSubttt()
         {
 
             int id = 0;
@@ -146,7 +146,7 @@ namespace TesOnlineTes
         }
 
         [TestMethod]
-        public void TestMethod8()
+        public void TestMethodSubtt()
         {
             // SoalDAO soal = new SoalDAO(); //nama DAO
             int id = 1;
@@ -157,7 +157,7 @@ namespace TesOnlineTes
         }
 
         [TestMethod]
-        public void TestMethod9()
+        public void TestMethodSubtf()
         {
             //SoalDAO soalDAO = new SoalDAO();   //nama DAO
 

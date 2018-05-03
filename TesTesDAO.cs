@@ -1,10 +1,11 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TesOnline;
 
 namespace TesOnlineTes
 {
     [TestClass]
-    public class WilayahTesDAO
+    public class TesTesDAO
     {
         TesDAO tes = new TesDAO();
 
@@ -54,7 +55,7 @@ namespace TesOnlineTes
             //t.ID_SUBTESSOAL = 3;
             int x = tes.add(t);
             //Trace.WriteLine(t.ID_SOAL);
-            Assert.AreEqual(1, x);
+            Assert.AreEqual(1,x);
 
 
         }
@@ -166,7 +167,7 @@ namespace TesOnlineTes
             //SoalDAO soalDAO = new SoalDAO();   //nama DAO
 
             TES subtess = new TES();
-            subtess.ID_SUBTES = 1;
+            subtess.ID_SUBTES  = 1;
             int x = tes.add(subtess);
 
             //SOAL result = soal.add(soal);
@@ -179,4 +180,6 @@ namespace TesOnlineTes
         }
 
     }
+
 }
+
