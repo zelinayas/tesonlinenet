@@ -1,26 +1,27 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Test_Online;
 
-namespace TesOnlineTes
+namespace Test_OnlineTES
 {
     [TestClass]
     public class WilayahTesDAO
     {
-        TesDAO tes = new TesDAO();
+        WilayahDAO wil = new WilayahDAO();
 
         [TestMethod]
-        public void TestMethodTes()
+        public void TestMethodWilayah()
         {
 
         }
 
         [TestMethod]
-        public void TestMethodDetailTes()
+        public void TestMethodDetailWilayah()
         {
 
             int id = 0;
-            TES expectedResult = null; //nama model //bisa pakai .isNull
-            TES result = tes.detail(id);
+            WILAYAH expectedResult = null; //nama model //bisa pakai .isNull
+            WILAYAH result = wil.detail(id);
             //Assert.IsNull(result);
             Assert.AreEqual(expectedResult, result);
 
@@ -31,28 +32,28 @@ namespace TesOnlineTes
         {
 
             int id = 1;
-            TES result = tes.detail(id);
+            WILAYAH result = wil.detail(id);
             Assert.IsNotNull(result); //jika sudah diisi akan ceklist
 
         }
 
         [TestMethod]
-        public void TestMethodGetallTes()
+        public void TestMethodGetallWilayah()
         {
 
-            Assert.IsNotNull(tes.getAll());
+            Assert.IsNotNull(wil.getAll());
 
         }
 
 
         [TestMethod] //passTambah
-        public void TestMethodTambahTes()
+        public void TestMethodTambahWilayah()
         {
 
-            TES t = new TES();
+            WILAYAH w = new WILAYAH();
             //t.ID_SUBTES = 10; 
             //t.ID_SUBTESSOAL = 3;
-            int x = tes.add(t);
+            int x = wil.add(w);
             //Trace.WriteLine(t.ID_SOAL);
             Assert.AreEqual(1, x);
 
@@ -60,26 +61,26 @@ namespace TesOnlineTes
         }
 
         [TestMethod] //passGagalTambah
-        public void TestMethodGagalTambahTes()
+        public void TestMethodGagalTambahWilayah()
         {
 
 
-            TES s = new TES();
+            WILAYAH w = new WILAYAH();
             //s.ID_SUBTES = 5;
             //s.DURASI_SUB = DateTime.Now;
-            int x = tes.add(s);
+            int x = wil.add(w);
             Assert.AreEqual(1, x);
 
         }
 
         [TestMethod] //passDelete 3
-        public void TestMethodDeleteTesBenar()
+        public void TestMethodDeleteWilayahBenar()
         {
 
 
-            TES ss = tes.detail(3);
-            Assert.IsNotNull(tes);
-            int a = tes.delete(3);
+            WILAYAH ss = wil.detail(3);
+            Assert.IsNotNull(wil);
+            int a = wil.delete(3);
             Assert.AreEqual(1, a);
 
         }
@@ -87,10 +88,10 @@ namespace TesOnlineTes
         [TestMethod]
         public void TestMethodTess()
         {
-            TES s = new TES);
+            WILAYAH w = new WILAYAH();
             //s.ID_SUBTES = 1;
-            int x = tes.add(s);
-            Assert.AreEqual(1, x);  //1 itu row affected
+            int x = wil.add(w);
+            Assert.AreEqual(-1, x);  //1 itu row affected
 
         }
 
@@ -111,14 +112,14 @@ namespace TesOnlineTes
         //}
 
         [TestMethod] //passEdit
-        public void TestMethodEditTes()
+        public void TestMethodEditWilayah()
         {
             int ID = 3;
-            TES cekDetail = tes.detail(ID);
+            WILAYAH cekDetail = wil.detail(ID);
             //Assert.IsNotNull(cekDetail);
-            cekDetail.ID_SUBTES = ID;
+            cekDetail.ID_PROFIL = ID;
             //cekDetail.DURASI_SUB = DateTime.Now;
-            int x = tes.edit(ID, cekDetail);
+            int x = wil.edit(ID, cekDetail);
             Assert.AreEqual(1, x);
 
         }
@@ -127,11 +128,11 @@ namespace TesOnlineTes
         public void TestMethodEditTess()
         {
             int ID = 10;
-            TES cekDetail = tes.detail(ID);
+            WILAYAH cekDetail = wil.detail(ID);
             //Assert.IsNotNull(cekDetail);
-            cekDetail.ID_SUBTES = ID;
+            cekDetail.ID_PROFIL = ID;
             //cekDetail.DURASI_SUB = DateTime.Now;
-            int x = tes.edit(ID, cekDetail);
+            int x = wil.edit(ID, cekDetail);
             Assert.AreEqual(1, x);
 
         }
@@ -143,7 +144,7 @@ namespace TesOnlineTes
 
             int id = 0;
             //SOAL expectedResult = null; //nama model //bisa pakai .isNull
-            TES result = tes.detail(id);
+            WILAYAH result = wil.detail(id);
             Assert.IsNull(result);
 
 
@@ -155,8 +156,8 @@ namespace TesOnlineTes
             // SoalDAO soal = new SoalDAO(); //nama DAO
             int id = 1;
             //SOAL expectedResult = null; //nama model
-            TES result = tes.detail(id);
-            Assert.IsNotNull(result); //jika sudah diisi akan ceklist
+            WILAYAH result = wil.detail(id);
+            Assert.IsNull(result); //jika sudah diisi akan ceklist
 
         }
 
@@ -165,14 +166,14 @@ namespace TesOnlineTes
         {
             //SoalDAO soalDAO = new SoalDAO();   //nama DAO
 
-            TES subtess = new TES();
-            subtess.ID_SUBTES = 1;
-            int x = tes.add(subtess);
+            WILAYAH wilayah = new WILAYAH();
+            wilayah.ID_PROFIL = 1;
+            int x = wil.add(wilayah);
 
             //SOAL result = soal.add(soal);
             //SOAL expectedResult = soal.detail(id);   //nama model //bisa pakai .isNull
             //SOAL result = soal.detail(id);
-            Assert.AreEqual(1, x);
+            Assert.AreEqual(-1, x);
 
 
 

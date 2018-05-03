@@ -1,182 +1,132 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TesOnline;
+using Test_Online;
 
-namespace TesOnlineTes
+namespace Test_OnlineTES
 {
     [TestClass]
     public class PesertaJawabanDetailTesDAO
     {
-        PesertaJawabanDetailDAO pesertajwban = new PesertaJawabanDetailDAO();
+        Peserta_Jawaban_DetailDAO pes = new Peserta_Jawaban_DetailDAO();
 
         [TestMethod]
-        public void TestMethodPesertajwbnDetail()
+        public void TestMethodPesertaJawabanDetail()
         {
 
         }
 
         [TestMethod]
-        public void TestMethodDetailPesertajwbnDetail()
+        public void TestMethodDetailPesertaJawabanDetail()
         {
-
             int id = 0;
             PESERTA_JAWABAN_DETAIL expectedResult = null; //nama model //bisa pakai .isNull
-            PESERTA_JAWABAN_DETAIL result = pesertajwban.detail(id);
-            //Assert.IsNull(result);
+            PESERTA_JAWABAN_DETAIL result = pes.detail(id);
             Assert.AreEqual(expectedResult, result);
 
         }
 
         [TestMethod]
-        public void TestMethodTampilDataBenarPesertajwbnDetail()
+        public void TestMethodTampilDataBenarPesertaJawabanDetail()
         {
 
             int id = 1;
-            PESERTA_JAWABAN_DETAIL result = pesertajwban.detail(id);
+            PESERTA_JAWABAN_DETAIL result = pes.detail(id);
             Assert.IsNotNull(result); //jika sudah diisi akan ceklist
 
         }
 
         [TestMethod]
-        public void TestMethodGetallPesertajwbnDetail()
+        public void TestMethodGetallPesertaJawabanDetail()
         {
-
-            Assert.IsNotNull(pesertajwban.getAll());
-
+             Assert.IsNotNull(pes.getAll());
         }
 
 
         [TestMethod] //passTambah
-        public void TestMethodTambahPesertajwbnDetail()
+        public void TestMethodTambahPesertaJawabanDetail()
         {
-
-            PESERTA_JAWABAN_DETAIL tt = new PESERTA_JAWABAN_DETAIL();
-            //t.ID_SUBTES = 10; 
-            //t.ID_SUBTESSOAL = 3;
-            int x = pesertajwban.add(tt);
-            //Trace.WriteLine(t.ID_SOAL);
+            PESERTA_JAWABAN_DETAIL p = new PESERTA_JAWABAN_DETAIL();
+            int x = pes.add(p);
             Assert.AreEqual(1, x);
-
-
         }
 
         [TestMethod] //passGagalTambah
-        public void TestMethodGagalTambahPesertajwbnDetail()
+        public void TestMethodGagalTambahPesertaJawabanDetail()
         {
-
-
-            PESERTA_JAWABAN_DETAIL s = new PESERTA_JAWABAN_DETAIL();
-            //s.ID_SUBTES = 5;
-            //s.DURASI_SUB = DateTime.Now;
-            int x = pesertajwban.add(s);
+            PESERTA_JAWABAN_DETAIL p = new PESERTA_JAWABAN_DETAIL();
+            int x = pes.add(p);
             Assert.AreEqual(1, x);
-
         }
 
         [TestMethod] //passDelete 3
-        public void TestMethodDeletePesertajwbnDetailBenar()
+        public void TestMethodDeletePesertaTesBenar()
         {
 
 
-            PESERTA_JAWABAN_DETAIL ss = pesertajwban.detail(3);
-            Assert.IsNotNull(pesertajwban);
-            int a = pesertajwban.delete(3);
+            PESERTA_JAWABAN_DETAIL pt = pes.detail(3);
+            Assert.IsNotNull(pes);
+            int a = pes.delete(3);
             Assert.AreEqual(1, a);
 
         }
 
         [TestMethod]
-        public void TestMethodPesertajwbnDetails()
+        public void TestMethodTess()
         {
-            PESERTA_JAWABAN_DETAIL s = new PESERTA_JAWABAN_DETAIL();
-            //s.ID_SUBTES = 1;
-            int x = pesertajwban.add(s);
-            Assert.AreEqual(1, x);  //1 itu row affected
+            PESERTA_JAWABAN_DETAIL p = new PESERTA_JAWABAN_DETAIL();
+            int x = pes.add(p);
+            Assert.AreEqual(-1, x);  //1 itu row affected
 
         }
 
-        //[TestMethod] //passCekDurasi
-        //public void TestMethodDurasiTes()
-        //{
-        //    TES ss = tes.detail(3);
-        //    Assert.AreNotEqual("2018-05-02 14:15:10.687", ss.DURASI_SUB);
 
-        //}
-
-        //[TestMethod] //passGagalCekDurasi
-        //public void TestMethodDurasi()
-        //{
-        //    SUBTES ss = sub.detail(3);
-        //    Assert.AreNotEqual("5/2/2018 2:15:10", ss.DURASI_SUB);
-
-        //}
 
         [TestMethod] //passEdit
-        public void TestMethodEditPesertajwbnDetail()
+        public void TestMethodEditPesertaTes()
         {
             int ID = 3;
-            PESERTA_JAWABAN_DETAIL cekDetail = pesertajwban.detail(ID);
-            //Assert.IsNotNull(cekDetail);
-            cekDetail.ID_PESERTA_TEST = ID;
-            //cekDetail.DURASI_SUB = DateTime.Now;
-            int x = pesertajwban.edit(ID, cekDetail);
+            PESERTA_JAWABAN_DETAIL cekDetail = pes.detail(ID);
+            cekDetail.ID_JWBNPESERTA = ID;
+            int x = pes.edit(ID, cekDetail);
             Assert.AreEqual(1, x);
 
         }
 
         [TestMethod] //passGagalEdit
-        public void TestMethodEditPesertajwbnDetailf()
+        public void TestMethodEditTess()
         {
             int ID = 10;
-            PESERTA_JAWABAN_DETAIL cekDetail = pesertajwban.detail(ID);
-            //Assert.IsNotNull(cekDetail);
-            cekDetail.ID_SOAL = ID;
-            //cekDetail.DURASI_SUB = DateTime.Now;
-            int x = pesertajwban.edit(ID, cekDetail);
+            PESERTA_JAWABAN_DETAIL cekDetail = pes.detail(ID);
+            cekDetail.ID_JWBNPESERTA = ID;
+            int x = pes.edit(ID, cekDetail);
             Assert.AreEqual(1, x);
 
         }
 
 
         [TestMethod]
-        public void TestMethodPesertajwbnDetaily()
+        public void TestMethodTesq()
         {
-
             int id = 0;
-            //SOAL expectedResult = null; //nama model //bisa pakai .isNull
-            PESERTA_JAWABAN_DETAIL result = pesertajwban.detail(id);
+            PESERTA_JAWABAN_DETAIL result = pes.detail(id);
             Assert.IsNull(result);
-
-
         }
 
         [TestMethod]
-        public void TestMethodPesertajwbnDetailq()
+        public void TestMethodTesqq()
         {
-            // SoalDAO soal = new SoalDAO(); //nama DAO
             int id = 1;
-            //SOAL expectedResult = null; //nama model
-            PESERTA_JAWABAN_DETAIL result = pesertajwban.detail(id);
-            Assert.IsNotNull(result); //jika sudah diisi akan ceklist
-
+            PESERTA_JAWABAN_DETAIL result = pes.detail(id);
+            Assert.IsNull(result); //jika sudah diisi akan ceklist
         }
 
         [TestMethod]
-        public void TestMethodPesertajwbnDetailas()
+        public void TestMethodTesf()
         {
-            //SoalDAO soalDAO = new SoalDAO();   //nama DAO
-
-            PESERTA_JAWABAN_DETAIL subtess = new PESERTA_JAWABAN_DETAIL();
-            subtess.ID_PESERTA_TEST = 1;
-            int x = pesertajwban.add(subtess);
-
-            //SOAL result = soal.add(soal);
-            //SOAL expectedResult = soal.detail(id);   //nama model //bisa pakai .isNull
-            //SOAL result = soal.detail(id);
-            Assert.AreEqual(1, x);
-
-
-
+            PESERTA_JAWABAN_DETAIL p = new PESERTA_JAWABAN_DETAIL();
+            p.ID_JWBNPESERTA = 1;
+            int x = this.pes.add(p);
+            Assert.AreEqual(-1, x);
         }
     }
 }
