@@ -33,14 +33,15 @@ namespace TesOnlineTes
             Assert.IsNotNull(result); //jika sudah diisi akan ceklist
 
         }
-        [Timeout(1000)]
-        [TestMethod]
-        public void TestMethodGetall()
-        {
+
+        //[Timeout(1000)]
+        //[TestMethod]
+        //public void TestMethodGetall()
+        //{
             
-            Assert.IsNotNull(sub.getAll());
-            Thread.Sleep(2000);
-        }
+        //    Assert.IsNotNull(sub.getAll());
+        //    //Thread.Sleep(2000);
+        //}
 
 
         [TestMethod] //passTambah
@@ -64,7 +65,7 @@ namespace TesOnlineTes
 
            
             SUBTES s = new SUBTES();
-            s.ID_SUBTES = 5;
+            //s.ID_SUBTES = 5;
             s.DURASI_SUB = DateTime.Now;
             int x = sub.add(s);
             Assert.AreEqual(1,x);
@@ -108,6 +109,21 @@ namespace TesOnlineTes
             Assert.AreNotEqual("5/2/2018 2:15:10", ss.DURASI_SUB);
 
         }
+
+
+        //[TestMethod] //passCekDurasi
+        //public void TestMethodSearchbyNumber()
+        //{
+        //    SUBTES search = new SUBTES();
+        //    //var ss = sub.search;
+        //    var q = from x in sub.search
+        //            where x.Durasi.StartsWith("2")
+        //            select x;
+        //    q.ToList().ForEach(bawahan => Console.WriteLine(bawahan.Nama));
+        //    SUBTES ss = sub.detail(3);
+        //    Assert.AreNotEqual("2018-05-02 14:15:10.687", ss.DURASI_SUB);
+
+        //}
 
         [TestMethod] //passEdit
         public void TestMethodEdit()

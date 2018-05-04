@@ -88,7 +88,7 @@ namespace TesOnlineTes
         [TestMethod]
         public void TestMethodTess()
         {
-            TES s = new TES);
+            TES s = new TES();
             //s.ID_SUBTES = 1;
             int x = tes.add(s);
             Assert.AreEqual(1, x);  //1 itu row affected
@@ -161,6 +161,8 @@ namespace TesOnlineTes
 
         }
 
+        
+
         [TestMethod]
         public void TestMethodTesf()
         {
@@ -174,11 +176,8 @@ namespace TesOnlineTes
             //SOAL expectedResult = soal.detail(id);   //nama model //bisa pakai .isNull
             //SOAL result = soal.detail(id);
             Assert.AreEqual(1, x);
-
-
-
         }
-
+       
     }
 
 }

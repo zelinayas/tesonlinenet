@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Test_Online;
+using TesOnline;
 
 namespace Test_OnlineTES
 {

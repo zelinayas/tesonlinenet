@@ -17,8 +17,6 @@ namespace TesOnlineTes
             //SOAL expectedResult = null; //nama model //bisa pakai .isNull
             SOAL result = soal.detail(id);
             Assert.IsNotNull(result);
-
-
         }
 
         [TestMethod]
@@ -45,8 +43,6 @@ namespace TesOnlineTes
             //SOAL expectedResult = soal.detail(id);   //nama model //bisa pakai .isNull
             //SOAL result = soal.detail(id);
             Assert.AreEqual(1, x);
-            
-
 
         }
 
