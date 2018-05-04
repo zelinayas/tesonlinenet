@@ -34,48 +34,56 @@ namespace TesOnlineTes
 
         }
 
-        [Timeout(1000)]
-        [TestMethod]
-        public void TestMethodGetall()
-        {
+        //assert maka pake try catch
+        //tidak pake try catch ato pake throw, maka unit test diubah
+
+        //[Timeout(1000)]
+        //[TestMethod]
+        //public void TestMethodGetall()
+        //{
             
-            Assert.IsNotNull(sub.getAll);
-            //Thread.Sleep(2000);
-        }
+        //    Assert.IsNotNull(sub.GetType());
+        //    Thread.Sleep(2000);
+        //}
 
 
         [TestMethod] //passTambah
         public void TestMethodTambahSubtes()
         {
 
+            
+
             SUBTES ss = new SUBTES();
             //ss.ID_SUBTES = 10;
             ss.DURASI_SUB = DateTime.Now;
             int x = sub.add(ss);
-            Trace.WriteLine(ss.ID_SUBTES); //kepake di transdetail
-            //Assert.AreEqual(1,x);
+            //Trace.WriteLine(ss.ID_SUBTES); //pake trace dipake di transdetail
+            Assert.AreEqual(1,x);
 
 
         }
 
-       
+        
+
         [TestMethod] //passGagalTambah
         public void TestMethodGagalTambahSubtes()
         {
 
-           
+
             SUBTES s = new SUBTES();
-            //s.ID_SUBTES = 5;
+            s.ID_SUBTES = 1 ;
             s.DURASI_SUB = DateTime.Now;
             int x = sub.add(s);
             Assert.AreEqual(1,x);
 
         }
 
+
+
+
         [TestMethod] //passDelete 3
         public void TestMethodDeleteSubtesBenar()
         {
-
 
             SUBTES ss = sub.detail(3);
             Assert.IsNotNull(sub);
@@ -106,7 +114,7 @@ namespace TesOnlineTes
         public void TestMethodDurasi()
         {
             SUBTES ss = sub.detail(3);
-            Assert.AreNotEqual("5/2/2018 2:15:10", ss.DURASI_SUB);
+            Assert.AreNotEqual("5/2/2018 2:15:10", ss.DURASI_SUB); //assert apakah nilai kanan kiri itu sama
 
         }
 

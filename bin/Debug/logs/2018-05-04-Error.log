@@ -72,3 +72,5 @@ An Entity with Key (PK) will not round-trip when:
    at System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
    at System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
    at System.Data.Entity.Internal.InternalContext.SaveChanges()
+2018-05-04 13:46:25.4863 ERROR System.Data.Entity.Infrastructure.DbUpdateException
+2018-05-04 13:46:25.5703 ERROR An error occurred while updating the entries. See the inner exception for details.

@@ -61,15 +61,15 @@ namespace TesOnlineTes
         }
 
         [TestMethod] //passGagalTambah
+        [ExpectedException (typeof(DbUpdateException))]
         public void TestMethodGagalTambahTes()
         {
-
-
             TES s = new TES();
-            //s.ID_SUBTES = 5;
-            //s.DURASI_SUB = DateTime.Now;
+            s.ID_TES = 1;
+            s.ID_SUBTES = 21; //ID FK nya tidak ada
+            s.Modified_by = "coco";
             int x = tes.add(s);
-            Assert.AreEqual(1, x);
+            //Assert.AreEqual(1, x);
 
         }
 
@@ -77,12 +77,10 @@ namespace TesOnlineTes
         public void TestMethodDeleteTesBenar()
         {
 
-
             TES ss = tes.detail(3);
             Assert.IsNotNull(tes);
             int a = tes.delete(3);
             Assert.AreEqual(1, a);
-
         }
 
         [TestMethod]
@@ -180,5 +178,8 @@ namespace TesOnlineTes
        
     }
 
+    internal class DbUpdateException
+    {
+    }
 }
 
