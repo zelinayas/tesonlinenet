@@ -34,14 +34,14 @@ namespace TesOnlineTes
 
         }
 
-        //[Timeout(1000)]
-        //[TestMethod]
-        //public void TestMethodGetall()
-        //{
+        [Timeout(1000)]
+        [TestMethod]
+        public void TestMethodGetall()
+        {
             
-        //    Assert.IsNotNull(sub.getAll());
-        //    //Thread.Sleep(2000);
-        //}
+            Assert.IsNotNull(sub.getAll);
+            //Thread.Sleep(2000);
+        }
 
 
         [TestMethod] //passTambah
