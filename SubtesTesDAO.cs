@@ -111,29 +111,15 @@ namespace TesOnlineTes
         }
 
 
-        //[TestMethod] //passCekDurasi
-        //public void TestMethodSearchbyNumber()
-        //{
-        //    SUBTES search = new SUBTES();
-        //    //var ss = sub.search;
-        //    var q = from x in sub.search
-        //            where x.Durasi.StartsWith("2")
-        //            select x;
-        //    q.ToList().ForEach(bawahan => Console.WriteLine(bawahan.Nama));
-        //    SUBTES ss = sub.detail(3);
-        //    Assert.AreNotEqual("2018-05-02 14:15:10.687", ss.DURASI_SUB);
-
-        //}
-
         [TestMethod] //passEdit
         public void TestMethodEdit()
         {
-            int ID = 2;
+            int ID = 3;
             SUBTES cekDetail =  sub.detail(ID);
             //Assert.IsNotNull(cekDetail);
             cekDetail.ID_SUBTES = ID;
             cekDetail.DURASI_SUB = DateTime.Now;
-            cekDetail.Modified_by = "bibi";
+            cekDetail.Modified_by = "cici";
             int x = sub.edit(ID, cekDetail);
             Assert.AreEqual(1,x);
  
