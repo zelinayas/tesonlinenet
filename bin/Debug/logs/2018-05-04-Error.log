@@ -42,3 +42,33 @@
    at System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
    at System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
    at System.Data.Entity.Internal.InternalContext.SaveChanges()
+2018-05-04 09:24:10.4453 ERROR Error retrieving values from ObjectStateEntry. See inner exception for details.
+2018-05-04 09:24:10.5043 ERROR System.Data.UpdateException: Error retrieving values from ObjectStateEntry. See inner exception for details. ---> System.Data.MappingException: 
+TesOnlineModel.msl(98,10) : error 3004: Problem in mapping fragments starting at line 98:No mapping specified for properties SUBTES.IsActive, SUBTES.Is_Active in Set SUBTES.
+An Entity with Key (PK) will not round-trip when:
+  Entity is type [Test_OnlineModel.SUBTES]
+
+   at System.Data.Mapping.StorageMappingItemCollection.ViewDictionary.SerializedGenerateViews(StorageEntityContainerMapping entityContainerMap, Dictionary`2 resultDictionary)
+   at System.Data.Mapping.StorageMappingItemCollection.ViewDictionary.SerializedGetGeneratedViews(EntityContainer container)
+   at System.Data.Common.Utils.Memoizer`2.<>c__DisplayClass4_0.<Evaluate>b__0()
+   at System.Data.Common.Utils.Memoizer`2.Result.GetValue()
+   at System.Data.Common.Utils.Memoizer`2.Evaluate(TArg arg)
+   at System.Data.Mapping.StorageMappingItemCollection.ViewDictionary.GetGeneratedView(EntitySetBase extent, MetadataWorkspace workspace, StorageMappingItemCollection storageMappingItemCollection)
+   at System.Data.Mapping.Update.Internal.ViewLoader.InitializeEntitySet(EntitySetBase entitySetBase, MetadataWorkspace workspace)
+   at System.Data.Mapping.Update.Internal.ViewLoader.SyncInitializeEntitySet[TArg,TResult](EntitySetBase entitySetBase, MetadataWorkspace workspace, Func`2 evaluate, TArg arg)
+   at System.Data.Mapping.Update.Internal.ViewLoader.SyncContains[T_Element](EntitySetBase entitySetBase, MetadataWorkspace workspace, Set`1 set, T_Element element)
+   at System.Data.Mapping.Update.Internal.ViewLoader.IsServerGen(EntitySetBase entitySetBase, MetadataWorkspace workspace, EdmMember member)
+   at System.Data.Mapping.Update.Internal.ExtractorMetadata..ctor(EntitySetBase entitySetBase, StructuralType type, UpdateTranslator translator)
+   at System.Data.Mapping.Update.Internal.UpdateTranslator.GetExtractorMetadata(EntitySetBase entitySetBase, StructuralType type)
+   at System.Data.Mapping.Update.Internal.ExtractorMetadata.ExtractResultFromRecord(IEntityStateEntry stateEntry, Boolean isModified, IExtendedDataRecord record, Boolean useCurrentValues, UpdateTranslator translator, ModifiedPropertiesBehavior modifiedPropertiesBehavior)
+   at System.Data.Mapping.Update.Internal.RecordConverter.ConvertStateEntryToPropagatorResult(IEntityStateEntry stateEntry, Boolean useCurrentValues, ModifiedPropertiesBehavior modifiedPropertiesBehavior)
+   --- End of inner exception stack trace ---
+   at System.Data.Mapping.Update.Internal.RecordConverter.ConvertStateEntryToPropagatorResult(IEntityStateEntry stateEntry, Boolean useCurrentValues, ModifiedPropertiesBehavior modifiedPropertiesBehavior)
+   at System.Data.Mapping.Update.Internal.ExtractedStateEntry..ctor(UpdateTranslator translator, IEntityStateEntry stateEntry)
+   at System.Data.Mapping.Update.Internal.UpdateTranslator.LoadStateEntry(IEntityStateEntry stateEntry)
+   at System.Data.Mapping.Update.Internal.UpdateTranslator.PullModifiedEntriesFromStateManager()
+   at System.Data.Mapping.Update.Internal.UpdateTranslator.ProduceCommands()
+   at System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   at System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   at System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()

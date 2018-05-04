@@ -37,13 +37,13 @@ namespace TesOnlineTes
 
         }
 
-        [TestMethod]
-        public void TestMethodGetallTes()
-        {
+        //[TestMethod]
+        //public void TestMethodGetallTes()
+        //{
 
-            Assert.IsNotNull(tes.getAll());
+        //    Assert.IsNotNull(tes.getAll());
 
-        }
+        //}
 
 
         [TestMethod] //passTambah

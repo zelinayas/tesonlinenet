@@ -128,11 +128,12 @@ namespace TesOnlineTes
         [TestMethod] //passEdit
         public void TestMethodEdit()
         {
-            int ID = 3;
+            int ID = 2;
             SUBTES cekDetail =  sub.detail(ID);
             //Assert.IsNotNull(cekDetail);
             cekDetail.ID_SUBTES = ID;
             cekDetail.DURASI_SUB = DateTime.Now;
+            cekDetail.Modified_by = "bibi";
             int x = sub.edit(ID, cekDetail);
             Assert.AreEqual(1,x);
  
