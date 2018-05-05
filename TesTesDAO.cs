@@ -61,7 +61,7 @@ namespace TesOnlineTes
         }
 
         [TestMethod] //passGagalTambah
-        [ExpectedException (typeof(DbUpdateException))]
+        [ExpectedException (typeof(DbUpdateException))] //skenarion gagal itu pake exception
         public void TestMethodGagalTambahTes()
         {
             TES s = new TES();
